@@ -47,7 +47,7 @@ else
 
 	if(channelname.includes("ticket"))
 	{
-		ticket_message_pop(channelname,"undefinned");
+		ticket_message_pop(message,channelname,"undefinned");
 		
 	}
 }
@@ -105,7 +105,7 @@ function closeTicket(emb)
 	collector.on('collect', r => {
 
 		let channelname = emb.channel.name
-  		ticket_message_pop(channelname,1)
+  		ticket_message_pop("undefinned",channelname,1)
   		let channel = emb.channel;
   		channel.delete();
 	}
@@ -116,7 +116,7 @@ function closeTicket(emb)
 
 
 
-function ticket_message_pop(channelname,pop)
+function ticket_message_pop(message,channelname,pop)
 {
 	for (var i = 0; i < tickets.length; i++) {
 			t_index = tickets[i]
