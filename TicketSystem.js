@@ -91,14 +91,14 @@ function embedTicket(message,channel,ticketname,ticketnumber)
 	tickets.push(arr);
 	 
     channel.send(embed).then(emb =>{
-    	//closeTicket(emb)
-    	testTicket(emb);
+    	closeTicket(emb)
+    	
     })
 
     
 }
 
-function testTicket(emb)
+function closeTicket(emb)
 {
 	const filter = (reaction, user) => reaction.emoji.name === '🗑️'
 	const collector = emb.createReactionCollector(filter, { dispose: true })
@@ -107,7 +107,6 @@ function testTicket(emb)
 		let channelname = emb.channel.name
   		ticket_message_pop(channelname,1)
   		let channel = emb.channel;
-  		//console.log(channel)
   		channel.delete();
 	}
 
@@ -115,19 +114,7 @@ function testTicket(emb)
 
 }
 
-function closeTicket(emb)
-{
-	const filter = (reaction, user) => reaction.emoji.name === '🗑️'
-let collector = emb.awaitReactions(filter, { dispose: true })
-  .then(collected =>{
-  		let channelname = emb.channel.name
-  		ticket_message_pop(channelname,1)
-  		let channel = emb.channel;
-  		console.log(channel)
-  		channel.delete();
-  })
-  .catch(console.error);
-}
+
 
 function ticket_message_pop(channelname,pop)
 {
