@@ -47,8 +47,8 @@ else
 
 	if(channelname.includes("ticket"))
 	{
-		ticket_message_pop(message,channelname,"undefinned");
-		
+		ticket_message_pop(message,channelname,"undefined");
+			
 	}
 }
 
