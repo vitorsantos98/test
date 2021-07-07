@@ -4,3 +4,4 @@ Templates
 
 - Questions by DM
 - Ticket System
+- Channels Form
