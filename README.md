@@ -6,3 +6,4 @@ Templates
 - Ticket System
 - Channels Form
 - Flip Coin
+- Shop
